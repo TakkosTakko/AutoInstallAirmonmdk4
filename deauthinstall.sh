@@ -29,7 +29,7 @@ if [[ "$execute" == "ja" ]]; then
     echo "Installation wird ausgeführt..."
 
     echo "Anmeldung als root" 
-	sudo su -i root   
+	sudo -i su root   
 	
     echo "Installation von den Dependencies"
 	sudo apt install autoconf automake libpcre3-dev libnl-3-dev libsqlite3-dev libssl-dev ethtool build-essential g++ libnl-genl-3-dev libgcrypt20-dev libtool python3-distutils
@@ -40,9 +40,9 @@ if [[ "$execute" == "ja" ]]; then
     
     echo "Installieren von aircrack-ng"
     sudo apt-get install -y aircrack-ng
-    apt install git
-    git clone https://github.com/aircrack-ng/aircrack-ng.git
-    cd aircrack-ng
+    sudo apt install git
+    sudo git clone https://github.com/aircrack-ng/aircrack-ng.git
+    sudo cd aircrack-ng
     sudo autoreconf -i
     sudo ./configure --with-experimental --with-ext-scripts 
     sudo make 
@@ -53,8 +53,8 @@ if [[ "$execute" == "ja" ]]; then
 
     echo "Installieren von Netzwerktreiber (RTL8812AU)"
     sudo apt-get install dkms
-    git clone -b v5.6.4.2 https://github.com/aircrack-ng/rtl8812au.git
-    cd rtl*
+    sudo git clone -b v5.6.4.2 https://github.com/aircrack-ng/rtl8812au.git
+    sudo cd rtl*
     sudo make dkms_install
     make && make install
     sudo apt-get update
