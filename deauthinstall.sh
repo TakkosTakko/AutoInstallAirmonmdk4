@@ -26,10 +26,7 @@ echo "                                                         |___/            
 read -p "Möchtest du die Installation ausführen? (ja/nein): " execute
 
 if [[ "$execute" == "ja" ]]; then
-    echo "Installation wird ausgeführt..."
-
-    echo "Anmeldung als root" 
-	sudo -i su root   
+  
 	
     echo "Installation von den Dependencies"
 	sudo apt install autoconf automake libpcre3-dev libnl-3-dev libsqlite3-dev libssl-dev ethtool build-essential g++ libnl-genl-3-dev libgcrypt20-dev libtool python3-distutils
