@@ -39,7 +39,7 @@ if [[ "$execute" == "ja" ]]; then
     sudo apt-get install -y aircrack-ng
     sudo apt install git
     sudo git clone https://github.com/aircrack-ng/aircrack-ng.git
-    sudo cd aircrack-ng
+    sudo cd AutoInstallAirmonmdk4/aircrack-ng
     sudo autoreconf -i
     sudo ./configure --with-experimental --with-ext-scripts 
     sudo make 
