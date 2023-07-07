@@ -56,7 +56,7 @@ if [[ "$execute" == "ja" ]]; then
     sudo git clone -b v5.6.4.2 https://github.com/aircrack-ng/rtl8812au.git
     sudo cd rtl*
     sudo make dkms_install
-    make && make install
+     sudo make && sudo make install
     sudo apt-get update
     sudo apt-get install bc mokutil build-essential libelf-dev linux-headers-`uname -r`
 
